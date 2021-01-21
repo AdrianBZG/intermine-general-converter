@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<classes>
+    <class name="SkeletonClass" is-interface="true">
+        <reference name="referencedAttribute" referenced-type="ReferencedClass" reverse-reference="skeletonClass"/>
+        <attribute name="attribute1" type="attribute1Type"/>
+    </class>
+    <class name="ReferencedClass" is-interface="true" extends="BioEntity">
+        <collection name="skeletonClass" referenced-type="SkeletonClass" reverse-reference="referencedAttribute"/>
+    </class>
+</classes>
