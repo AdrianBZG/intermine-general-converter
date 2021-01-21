@@ -1,0 +1,19 @@
+{
+    "name": "CCLEProteomics",
+    "attributes":[
+        {
+            "gene": {
+                "index": 0,
+                "type": "reference",
+                "valueType": "string",
+                "referenceClass": "Gene",
+                "referenceAttribute": "symbol"
+            },
+            "chromosome": {
+                "index": 3,
+                "type": "native",
+                "valueType": "int"
+            }
+        }
+    ]
+}
