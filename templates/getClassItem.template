@@ -1,0 +1,15 @@
+public String getCLASSNAME(String identifier) {
+    String refId = CLASSNAMEMAP.get(identifier);
+    if (refId == null) {
+        Item classItem = createItem("CLASSNAME");
+        classItem.setAttribute("CLASSJOINATTRIBUTE", identifier);
+        try {
+            store(classItem);
+        } catch (ObjectStoreException e) {
+            throw new RuntimeException("failed to store item: " + identifier, e);
+        }
+        refId = classItem.getIdentifier();
+        CLASSNAMEMAP.put(identifier, refId);
+    }
+    return refId;
+}

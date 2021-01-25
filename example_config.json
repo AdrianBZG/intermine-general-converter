@@ -1,5 +1,6 @@
 {
     "name": "CCLEProteomics",
+    "fileType": "csv",
     "attributes":[
         {
             "gene": {
