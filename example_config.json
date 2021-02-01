@@ -1,20 +1,32 @@
 {
     "name": "CCLEProteomics",
     "fileType": "csv",
-    "attributes":[
-        {
-            "gene": {
-                "index": 0,
-                "type": "reference",
-                "valueType": "string",
-                "referenceClass": "Gene",
-                "referenceAttribute": "symbol"
-            },
-            "chromosome": {
-                "index": 3,
-                "type": "native",
-                "valueType": "int"
-            }
+    "loopType": "columns",
+    "key": {
+        "keyType": "string",
+        "type": "reference",
+        "referenceClass": "CellLine",
+        "referenceAttribute": "CCLEname",
+        "regex": "\\s+",
+        "valueName": "ProteinQuant",
+        "valueType": "double",
+        "range": {
+            "start": 20,
+            "end": 500
         }
-    ]
+    },
+    "attributes": {
+        "proteinID": {
+            "index": 0,
+            "type": "native",
+            "valueType": "string"
+        },
+        "gene": {
+            "index": 1,
+            "type": "reference",
+            "valueType": "string",
+            "referenceClass": "Gene",
+            "referenceAttribute": "symbol"
+        }
+    }    
 }

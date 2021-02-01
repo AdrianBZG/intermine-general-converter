@@ -1,0 +1,24 @@
+Iterator<?> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
+String[] firstLine = (String[]) lineIter.next();
+ArrayList<String> KEYHASHMAP = new ArrayList<String>();
+for(int i = 1; i < firstLine.length; i++) {
+    String formattedItem = firstLine[i].split("KEYPATTERN")[0].trim();
+    KEYHASHMAP.add(formattedItem);
+}
+
+while (lineIter.hasNext()) {
+    String[] line = (String[]) lineIter.next();
+
+    for(int i = 0; i < line.length; i++) {
+        String keyValue = line[i];
+        String keyForThisItem = KEYHASHMAP.get(i-1);
+        Item IntegratedItem;
+
+        IntegratedItem = createItem("CLASSNAME");
+
+        IntegratedItem.setReference("gene", geneId);
+        IntegratedItem.setAttribute("attribute", attributeValue);
+
+        store(IntegratedItem);
+    }
+}

@@ -7,5 +7,14 @@ def parse_args():
     return parser.parse_args()
 
 if __name__ == "__main__":
-    args = parse_args()     
+    # Parse arguments
+    args = parse_args() 
+
+    # Populate the configuration
     configFileReader = ConfigFileReader(args.configFile)
+
+    # Show the configuration to check correctness
+    configFileReader.describeConfig()
+
+    # Generate the converter code
+    configFileReader.generateCode()
